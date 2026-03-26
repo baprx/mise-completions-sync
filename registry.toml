@@ -23,6 +23,7 @@ glab = "gh_style"
 # Kubernetes ecosystem
 k9s = "standard"
 kind = "standard"
+kubectl-ai = "standard"
 minikube = "standard"
 kustomize = "standard"
 argocd = "standard"
@@ -58,34 +59,43 @@ doctl = "standard"
 oci = "standard"
 
 # Container tools
-podman = "standard"
-nerdctl = "standard"
-trivy = "standard"
 cosign = "standard"
+dive = "standard"
+nerdctl = "standard"
+oras = "standard"
+podman = "standard"
+regctl = "standard"
+trivy = "standard"
 
 # Dev tools
 chezmoi = "standard"
+crush = "standard"
 cue = "standard"
 dagger = "standard"
+doggo = "completions"
+fnox = "standard"
+gitleaks = "standard"
 golangci-lint = "standard"
 goreleaser = "standard"
 hugo = "standard"
 lazygit = "standard"
 mkcert = "standard"
 oc = "standard"
+pitchfork = "standard"
 pulumi = "standard"
 restic = "standard"
+rumdl = "completions"
 saml2aws = "standard"
 step = "standard"
 xh = "standard"
+yq = "standard"
 
 # Lefthook uses completions pattern
 lefthook = "completions"
 
 # Tools with explicit commands (unique patterns or partial shell support)
 
-# Partial shell support (zsh only)
-bun = { zsh = "bun completions" }
+bun = { zsh = "bun completions", bash = "bun completions", fish = "bun completions" }
 
 # Partial shell support (zsh + bash)
 npm = { zsh = "npm completion", bash = "npm completion" }
@@ -106,6 +116,7 @@ task = { zsh = "task --completion zsh", bash = "task --completion bash", fish = 
 bat = { zsh = "bat --completion zsh", bash = "bat --completion bash", fish = "bat --completion fish" }
 fd = { zsh = "fd --gen-completions zsh", bash = "fd --gen-completions bash", fish = "fd --gen-completions fish" }
 delta = { zsh = "delta --generate-completion zsh", bash = "delta --generate-completion bash", fish = "delta --generate-completion fish" }
+watchexec = { zsh = "watchexec --completions zsh", bash = "watchexec --completions bash", fish = "watchexec --completions fish" }
 zellij = { zsh = "zellij setup --generate-completion zsh", bash = "zellij setup --generate-completion bash", fish = "zellij setup --generate-completion fish" }
 
 # rg has unique --generate complete-{shell} pattern

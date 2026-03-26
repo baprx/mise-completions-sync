@@ -18,6 +18,7 @@ The following tools have shell completion support in mise-completions-sync.
 | deno | A modern runtime for JavaScript and TypeScript ... | ✓ | ✓ | ✓ |
 | [dive](https://github.com/wagoodman/dive) | A tool for exploring each layer in a docker image | ✓ | ✓ | ✓ |
 | docker |  | ✓ | ✓ | ✓ |
+| dockerfmt |  | ✓ | ✓ | ✓ |
 | [doctl](https://github.com/digitalocean/doctl) | The official command line interface for the Dig... | ✓ | ✓ | ✓ |
 | [doggo](https://github.com/mr-karan/doggo) | :dog: Command-line DNS Client for Humans. Writt... | ✓ | ✓ | ✓ |
 | [fd](https://github.com/sharkdp/fd) | A simple, fast and user-friendly alternative to... | ✓ | ✓ | ✓ |
@@ -32,18 +33,16 @@ The following tools have shell completion support in mise-completions-sync.
 | glab | gitlab cli | ✓ | ✓ | ✓ |
 | [golangci-lint](https://github.com/golangci/golangci-lint) | Fast linters Runner for Go | ✓ | ✓ | ✓ |
 | [goreleaser](https://github.com/goreleaser/goreleaser) | Deliver Go binaries as fast and easily as possible | ✓ | ✓ | ✓ |
-| [grpcurl](https://github.com/fullstorydev/grpcurl) | Like cURL, but for gRPC: Command-line tool for ... | ✓ | ✓ | ✓ |
 | [helm](https://github.com/helm/helm) | The Kubernetes Package Manager | ✓ | ✓ | ✓ |
 | [hugo](https://github.com/gohugoio/hugo) | The world’s fastest framework for building webs... | ✓ | ✓ | ✓ |
-| [hyperfine](https://github.com/sharkdp/hyperfine) | A command-line benchmarking tool | ✓ | ✓ | ✓ |
 | [istioctl](https://github.com/istio/istio) | Istio configuration command line utility for se... | ✓ | ✓ | ✓ |
 | [just](https://github.com/casey/just) | Just a command runner | ✓ | ✓ | ✓ |
 | [k3d](https://github.com/k3d-io/k3d) | Little helper to run CNCF's k3s in Docker | ✓ | ✓ | ✓ |
 | [k9s](https://github.com/derailed/k9s) | Kubernetes CLI To Manage Your Clusters In Style | ✓ | ✓ | ✓ |
 | [kind](https://github.com/kubernetes-sigs/kind) | Kubernetes IN Docker - local clusters for testi... | ✓ | ✓ | ✓ |
 | [ko](https://github.com/ko-build/ko) | Build and deploy Go applications on Kubernetes | ✓ | ✓ | ✓ |
-| [krew](https://github.com/kubernetes-sigs/krew) | Find and install kubectl plugins | ✓ | ✓ | ✓ |
 | [kubectl](https://github.com/kubernetes/kubernetes) | kubectl cli | ✓ | ✓ | ✓ |
+| kubectl-ai |  | ✓ | ✓ | ✓ |
 | [kubectx](https://github.com/ahmetb/kubectx) | Faster way to switch between clusters and names... | ✓ | ✓ |  |
 | [kubeseal](https://github.com/bitnami-labs/sealed-secrets) | A Kubernetes controller and tool for one-way en... | ✓ | ✓ | ✓ |
 | [kustomize](https://github.com/kubernetes-sigs/kustomize) | Customization of kubernetes YAML configurations | ✓ | ✓ | ✓ |

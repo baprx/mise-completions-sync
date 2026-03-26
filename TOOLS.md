@@ -5,7 +5,7 @@ Use this to identify tools that could be added to mise-completions-sync.
 
 ## Supported Tools
 
-Currently **77 tools** have completion support.
+Currently **83 tools** have completion support.
 
 See [docs/tools.md](docs/tools.md) for the full list with shell support details.
 
@@ -17,6 +17,7 @@ These tools are in mise's registry but not yet supported. They may have completi
 |------|-------------|--------|
 | [1password](https://github.com/1password/cli) | Password manager developed by AgileBits Inc | Needs testing |
 | aapt2 | Android Asset Packaging Tool (aapt) | Needs testing |
+| [acli](https://github.com/atlassian.com/acli) | Software to interact with Atlassian Cloud from ... | Needs testing |
 | [act](https://github.com/nektos/act) | Run your GitHub Actions locally | Needs testing |
 | [action-validator](https://github.com/mpalmer/action-validator) | Tool to validate GitHub Action and Workflow YAM... | Needs testing |
 | [actionlint](https://github.com/rhysd/actionlint) | :octocat: Static checker for GitHub Actions wor... | Needs testing |
@@ -52,6 +53,7 @@ These tools are in mise's registry but not yet supported. They may have completi
 | [ast-grep](https://github.com/ast-grep/ast-grep) | A CLI tool for code structural search, lint and... | Needs testing |
 | astro | CLI that makes it easy to create, test and depl... | Needs testing |
 | [atlas](https://github.com/ariga/atlas) | A modern tool for managing database schemas | Needs testing |
+| [atlas-community](https://github.com/ariga/atlas) | A modern tool for managing database schemas (Co... | Needs testing |
 | [atmos](https://github.com/cloudposse/atmos) | Workflow automation tool for DevOps. Keep confi... | Needs testing |
 | auto-doc | Github action that turns your reusable workflow... | Needs testing |
 | aws-amplify | The AWS Amplify CLI is a toolchain for simplify... | Needs testing |
@@ -63,10 +65,8 @@ These tools are in mise's registry but not yet supported. They may have completi
 | [aws-sso](https://github.com/synfinatic/aws-sso-cli) | A powerful tool for using AWS Identity Center f... | Needs testing |
 | [aws-vault](https://github.com/ByteNess/aws-vault) | A vault for securely storing and accessing AWS ... | Needs testing |
 | awscli-local | This package provides the awslocal command, whi... | Needs testing |
-| awsebcli | The AWS Elastic Beanstalk Command Line Interfac... | Needs testing |
-| awsls | A list command for AWS resources | Needs testing |
 
-*...and 832 more tools in mise registry*
+*...and 796 more tools in mise registry*
 
 ## Tools Without Completion Support
 
@@ -80,6 +80,7 @@ These tools have been tested and confirmed to NOT output shell completion script
 - **dust**: A more intuitive version of du in rust
 - **evans**: Evans: more expressive universal gRPC client
 - **eza**: A modern, maintained replacement for ls
+- **gcloud**: GCloud CLI (Google Cloud SDK)
 - **nomad**: Nomad is an easy-to-use, flexible, and performa...
 - **terraform**: Terraform enables you to safely and predictably...
 - **tokei**: Count your code, quickly

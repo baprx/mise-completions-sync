@@ -23,6 +23,7 @@ glab = "gh_style"
 # Kubernetes ecosystem
 k9s = "standard"
 kind = "standard"
+kubectl-ai = "standard"
 minikube = "standard"
 kustomize = "standard"
 argocd = "standard"
@@ -60,15 +61,22 @@ doctl = "standard"
 oci = "standard"
 
 # Container tools
-podman = "standard"
-nerdctl = "standard"
-trivy = "standard"
+dive = "standard"
 cosign = "standard"
+dockerfmt = "standard"
+nerdctl = "standard"
+oras = "standard"
+podman = "standard"
+regctl = "standard"
+trivy = "standard"
 
 # Dev tools
 chezmoi = "standard"
+crush = "standard"
 cue = "standard"
 dagger = "standard"
+fnox = "standard"
+gitleaks = "standard"
 golangci-lint = "standard"
 goreleaser = "standard"
 grpcurl = "standard"
@@ -76,19 +84,20 @@ hugo = "standard"
 lazygit = "standard"
 mkcert = "standard"
 oc = "standard"
+pitchfork = "standard"
 pulumi = "standard"
 restic = "standard"
 saml2aws = "standard"
 step = "standard"
 xh = "standard"
+yq = "standard"
 
 # Lefthook uses completions pattern
 lefthook = "completions"
 
 # Tools with explicit commands (unique patterns or partial shell support)
 
-# Partial shell support (zsh only)
-bun = { zsh = "bun completions" }
+bun = { zsh = "bun completions", bash = "bun completions", fish = "bun completions" }
 
 # Partial shell support (zsh + bash)
 npm = { zsh = "npm completion", bash = "npm completion" }

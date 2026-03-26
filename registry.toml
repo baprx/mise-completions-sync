@@ -61,9 +61,8 @@ doctl = "standard"
 oci = "standard"
 
 # Container tools
-dive = "standard"
 cosign = "standard"
-dockerfmt = "standard"
+dive = "standard"
 nerdctl = "standard"
 oras = "standard"
 podman = "standard"

@@ -20,6 +20,7 @@ The following tools have shell completion support in mise-completions-sync.
 | docker |  | ✓ | ✓ | ✓ |
 | dockerfmt |  | ✓ | ✓ | ✓ |
 | [doctl](https://github.com/digitalocean/doctl) | The official command line interface for the Dig... | ✓ | ✓ | ✓ |
+| [doggo](https://github.com/mr-karan/doggo) | :dog: Command-line DNS Client for Humans. Writt... | ✓ | ✓ | ✓ |
 | [fd](https://github.com/sharkdp/fd) | A simple, fast and user-friendly alternative to... | ✓ | ✓ | ✓ |
 | flux |  | ✓ | ✓ | ✓ |
 | [flyctl](https://github.com/superfly/flyctl) | Command line tools for fly.io services | ✓ | ✓ | ✓ |
@@ -69,6 +70,7 @@ The following tools have shell completion support in mise-completions-sync.
 | [rg](https://github.com/BurntSushi/ripgrep) | ripgrep recursively searches directories for a ... | ✓ | ✓ | ✓ |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | ripgrep recursively searches directories for a ... | ✓ | ✓ | ✓ |
 | [ruff](https://github.com/astral-sh/ruff) | An extremely fast Python linter and code format... | ✓ | ✓ | ✓ |
+| rumdl | Markdown Linter and Formatter written in Rust | ✓ | ✓ | ✓ |
 | rustup |  | ✓ | ✓ | ✓ |
 | [saml2aws](https://github.com/Versent/saml2aws) | CLI tool which enables you to login and retriev... | ✓ | ✓ | ✓ |
 | [skaffold](https://github.com/GoogleContainerTools/skaffold) | Easy and Repeatable Kubernetes Development | ✓ | ✓ | ✓ |
@@ -83,12 +85,13 @@ The following tools have shell completion support in mise-completions-sync.
 | [uv](https://github.com/astral-sh/uv) | An extremely fast Python package installer and ... | ✓ | ✓ | ✓ |
 | [velero](https://github.com/vmware-tanzu/velero) | Backup and migrate Kubernetes applications and ... | ✓ | ✓ | ✓ |
 | vercel | Build and deploy on the Vercel cloud | ✓ | ✓ |  |
+| [watchexec](https://github.com/watchexec/watchexec) | Executes commands in response to file modificat... | ✓ | ✓ | ✓ |
 | [xh](https://github.com/ducaale/xh) | Friendly and fast tool for sending HTTP requests | ✓ | ✓ | ✓ |
 | [yq](https://github.com/mikefarah/yq) | yq is a portable command-line YAML processor | ✓ | ✓ | ✓ |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included | ✓ | ✓ | ✓ |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter cd command. Supports all major shells | ✓ | ✓ | ✓ |
 
-**Total: 83 tools**
+**Total: 86 tools**
 
 ## Shell Support Legend
 

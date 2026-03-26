@@ -5,7 +5,7 @@ Use this to identify tools that could be added to mise-completions-sync.
 
 ## Supported Tools
 
-Currently **86 tools** have completion support.
+Currently **85 tools** have completion support.
 
 See [docs/tools.md](docs/tools.md) for the full list with shell support details.
 

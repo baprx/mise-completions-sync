@@ -21,7 +21,6 @@ The following tools have shell completion support in mise-completions-sync.
 | flux |  | ✓ | ✓ | ✓ |
 | [flyctl](https://github.com/superfly/flyctl) | Command line tools for fly.io services | ✓ | ✓ | ✓ |
 | [fzf](https://github.com/junegunn/fzf) | :cherry_blossom: A command-line fuzzy finder | ✓ | ✓ | ✓ |
-| gcloud | GCloud CLI (Google Cloud SDK) | ✓ | ✓ |  |
 | [gh](https://github.com/cli/cli) | GitHub’s official command line tool | ✓ | ✓ | ✓ |
 | [gitu](https://github.com/altsem/gitu) | A TUI Git client inspired by Magit | ✓ | ✓ | ✓ |
 | [gitui](https://github.com/extrawurst/gitui) | Blazing 💥 fast terminal-ui for git written in rust | ✓ | ✓ | ✓ |
@@ -59,6 +58,7 @@ The following tools have shell completion support in mise-completions-sync.
 | [pnpm](https://github.com/pnpm/pnpm) | Fast, disk space efficient package manager | ✓ | ✓ |  |
 | podman | Podman: A tool for managing OCI containers and ... | ✓ | ✓ | ✓ |
 | poetry | Python packaging and dependency management made... | ✓ | ✓ | ✓ |
+| [prek](https://github.com/j178/prek) |  | ✓ | ✓ | ✓ |
 | [pulumi](https://github.com/pulumi/pulumi) | Pulumi - Infrastructure as Code in any programm... | ✓ | ✓ | ✓ |
 | [restic](https://github.com/restic/restic) | Fast, secure, efficient backup program | ✓ | ✓ | ✓ |
 | [rg](https://github.com/BurntSushi/ripgrep) | ripgrep recursively searches directories for a ... | ✓ | ✓ | ✓ |
@@ -77,7 +77,7 @@ The following tools have shell completion support in mise-completions-sync.
 | [ty](https://github.com/astral-sh/ty) | An extremely fast Python type checker and langu... | ✓ | ✓ | ✓ |
 | [uv](https://github.com/astral-sh/uv) | An extremely fast Python package installer and ... | ✓ | ✓ | ✓ |
 | [velero](https://github.com/vmware-tanzu/velero) | Backup and migrate Kubernetes applications and ... | ✓ | ✓ | ✓ |
-| vercel |  | ✓ | ✓ |  |
+| vercel | Build and deploy on the Vercel cloud | ✓ | ✓ |  |
 | [xh](https://github.com/ducaale/xh) | Friendly and fast tool for sending HTTP requests | ✓ | ✓ | ✓ |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included | ✓ | ✓ | ✓ |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter cd command. Supports all major shells | ✓ | ✓ | ✓ |

@@ -123,3 +123,9 @@ fzf = { zsh = "fzf --zsh", bash = "fzf --bash", fish = "fzf --fish" }
 
 # nix needs extra experimental features flag
 nix = { zsh = "nix --extra-experimental-features 'nix-command' completion zsh 2>/dev/null || true", bash = "nix --extra-experimental-features 'nix-command' completion bash 2>/dev/null || true", fish = "nix --extra-experimental-features 'nix-command' completion fish 2>/dev/null || true" }
+
+# Tools requiring environment variables (shell-specific)
+[tools.prek]
+zsh = { command = "prek --completions zsh", env = { COMPLETE = "zsh" } }
+bash = { command = "prek --completions bash", env = { COMPLETE = "bash" } }
+fish = { command = "prek --completions fish", env = { COMPLETE = "fish" } }

@@ -14,10 +14,11 @@ Compares mise's registry against our registry.toml and suggests new tools
 to add based on known completion patterns.
 """
 
-import tomllib
-import httpx
 import sys
 from pathlib import Path
+
+import httpx
+import tomllib
 
 MISE_REGISTRY_URL = "https://raw.githubusercontent.com/jdx/mise/main/registry.toml"
 

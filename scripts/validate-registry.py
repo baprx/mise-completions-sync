@@ -12,10 +12,12 @@ Tests each tool's completion command to verify it works. By default tests
 all entries; use --installed-only to skip tools not installed via mise.
 """
 
+import os
 import subprocess
 import sys
-import tomllib
 from pathlib import Path
+
+import tomllib
 
 
 def get_installed_tools() -> set[str]:
@@ -38,8 +40,12 @@ def get_installed_tools() -> set[str]:
         return set()
 
 
-def load_registry() -> dict[str, dict[str, str]]:
-    """Load registry.toml and expand patterns to get tool completions."""
+def load_registry() -> dict[str, dict[str, dict]]:
+    """Load registry.toml and expand patterns to get tool completions.
+
+    Returns a dict with tool names as keys and values containing shell-specific
+    completion info: {shell: {"command": str, "env": dict or None}}
+    """
     registry_path = Path(__file__).parent.parent / "registry.toml"
     with open(registry_path, "rb") as f:
         raw = tomllib.load(f)
@@ -53,28 +59,56 @@ def load_registry() -> dict[str, dict[str, str]]:
             # Pattern reference
             pattern = patterns.get(entry)
             if pattern is None:
-                print(f"Warning: unknown pattern '{entry}' for tool '{tool_name}'", file=sys.stderr)
+                print(
+                    f"Warning: unknown pattern '{entry}' for tool '{tool_name}'",
+                    file=sys.stderr,
+                )
                 continue
             # Expand {} placeholder with tool name
             expanded[tool_name] = {
-                shell: cmd.replace("{}", tool_name)
+                shell: {"command": cmd.replace("{}", tool_name), "env": None}
                 for shell, cmd in pattern.items()
             }
         else:
-            # Explicit commands
-            expanded[tool_name] = entry
+            # Explicit commands - handle both string and object formats
+            expanded[tool_name] = {}
+            for shell, value in entry.items():
+                if isinstance(value, str):
+                    # Simple string format
+                    expanded[tool_name][shell] = {"command": value, "env": None}
+                elif isinstance(value, dict):
+                    # Object format with command and env
+                    expanded[tool_name][shell] = {
+                        "command": value.get("command", ""),
+                        "env": value.get("env"),
+                    }
+                else:
+                    print(
+                        f"Warning: invalid format for {tool_name}.{shell}",
+                        file=sys.stderr,
+                    )
 
     return expanded
 
 
-def test_completion(tool: str, shell: str, command: str) -> tuple[bool, str]:
+def test_completion(
+    tool: str, shell: str, command: str, env_vars: dict[str, str] | None = None
+) -> tuple[bool, str]:
     """Test a completion command. Returns (success, error_message)."""
     wrapped = f"mise x {tool} -- {command}"
+
+    # Build environment with optional vars
+    env = None
+    if env_vars:
+        env = os.environ.copy()
+        env.update(env_vars)
+
     result = subprocess.run(
         ["sh", "-c", wrapped],
         capture_output=True,
         text=True,
         timeout=30,
+        env=env,
     )
 
     if result.returncode == 0 and result.stdout.strip():
@@ -91,7 +125,6 @@ def main():
     installed = get_installed_tools() if installed_only else set()
 
     results: dict[str, dict[str, tuple[bool, str]]] = {}
-    shells = ["zsh", "bash", "fish"]
 
     tools = sorted(registry.keys())
     total = len(tools)
@@ -108,13 +141,12 @@ def main():
         print(f"[{i}/{total}] {tool}...", end=" ", flush=True)
         tool_ok = True
 
-        for shell in shells:
-            if shell not in completions:
-                continue
+        for shell, completion_data in completions.items():
+            command = completion_data["command"]
+            env_vars = completion_data.get("env")
 
-            command = completions[shell]
             try:
-                ok, err = test_completion(tool, shell, command)
+                ok, err = test_completion(tool, shell, command, env_vars)
                 results[tool][shell] = (ok, err)
                 if not ok:
                     tool_ok = False
@@ -144,7 +176,9 @@ def main():
             else:
                 if tool not in failures:
                     failures[tool] = []
-                failures[tool].append((shell, registry[tool][shell], err))
+                # Get the original command for display
+                cmd = registry[tool][shell]["command"]
+                failures[tool].append((shell, cmd, err))
 
     print(f"\nPassed: {successes}/{total_tests}")
 

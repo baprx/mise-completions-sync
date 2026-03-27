@@ -118,14 +118,24 @@ fn generate_completion(
     command: &str,
     shell: &str,
     output_dir: &PathBuf,
+    env_vars: Option<&std::collections::HashMap<String, String>>,
 ) -> Result<(), Error> {
     // Create output directory if needed
     std::fs::create_dir_all(output_dir).map_err(|e| Error::CreateDir(output_dir.clone(), e))?;
 
     // Run the completion command wrapped with mise to ensure the tool is available
     let wrapped_command = format!("mise x {tool} -- {command}");
-    let output = Command::new("sh")
-        .args(["-c", &wrapped_command])
+    let mut cmd = Command::new("sh");
+    cmd.args(["-c", &wrapped_command]);
+
+    // Add shell-specific environment variables if provided
+    if let Some(env) = env_vars {
+        for (key, value) in env {
+            cmd.env(key, value);
+        }
+    }
+
+    let output = cmd
         .output()
         .map_err(|e| Error::Generate(tool.to_string(), e.to_string()))?;
 
@@ -179,7 +189,8 @@ pub fn sync_completions(shells: &[String], specific_tools: &[String]) -> Result<
         for tool in &tools_in_registry {
             if let Some(completions) = registry.tools.get(*tool) {
                 if let Some(cmd) = completions.get(shell) {
-                    if let Err(e) = generate_completion(tool, cmd, shell, &output_dir) {
+                    let env = completions.get_env(shell);
+                    if let Err(e) = generate_completion(tool, cmd, shell, &output_dir, env) {
                         eprintln!("  {tool}: {e}");
                     }
                 }

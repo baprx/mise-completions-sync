@@ -14,10 +14,10 @@ Fetches tools from https://mise-versions.jdx.dev/api/tools and compares
 against our registry.toml to suggest new tools to add.
 """
 
-import json
-import tomllib
-import httpx
 from pathlib import Path
+
+import httpx
+import tomllib
 
 MISE_API_URL = "https://mise-versions.jdx.dev/api/tools"
 

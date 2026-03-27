@@ -64,6 +64,7 @@ The following tools have shell completion support in mise-completions-sync.
 | [pnpm](https://github.com/pnpm/pnpm) | Fast, disk space efficient package manager | ✓ | ✓ |  |
 | podman | Podman: A tool for managing OCI containers and ... | ✓ | ✓ | ✓ |
 | poetry | Python packaging and dependency management made... | ✓ | ✓ | ✓ |
+| [prek](https://github.com/j178/prek) |  | ✓ | ✓ | ✓ |
 | [pulumi](https://github.com/pulumi/pulumi) | Pulumi - Infrastructure as Code in any programm... | ✓ | ✓ | ✓ |
 | [regctl](https://github.com/regclient/regclient) | Docker and OCI Registry Client in Go and toolin... | ✓ | ✓ | ✓ |
 | [restic](https://github.com/restic/restic) | Fast, secure, efficient backup program | ✓ | ✓ | ✓ |
@@ -73,6 +74,7 @@ The following tools have shell completion support in mise-completions-sync.
 | rumdl | Markdown Linter and Formatter written in Rust | ✓ | ✓ | ✓ |
 | rustup |  | ✓ | ✓ | ✓ |
 | [saml2aws](https://github.com/Versent/saml2aws) | CLI tool which enables you to login and retriev... | ✓ | ✓ | ✓ |
+| [scaleway-cli](https://github.com/scaleway/scaleway-cli) | Command Line Interface for Scaleway | ✓ | ✓ | ✓ |
 | [skaffold](https://github.com/GoogleContainerTools/skaffold) | Easy and Repeatable Kubernetes Development | ✓ | ✓ | ✓ |
 | [sops](https://github.com/getsops/sops) | Simple and flexible tool for managing secrets | ✓ | ✓ |  |
 | [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely custo... | ✓ | ✓ | ✓ |
@@ -91,7 +93,7 @@ The following tools have shell completion support in mise-completions-sync.
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included | ✓ | ✓ | ✓ |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter cd command. Supports all major shells | ✓ | ✓ | ✓ |
 
-**Total: 86 tools**
+**Total: 88 tools**
 
 ## Shell Support Legend
 

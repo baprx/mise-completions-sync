@@ -5,7 +5,7 @@ Use this to identify tools that could be added to mise-completions-sync.
 
 ## Supported Tools
 
-Currently **86 tools** have completion support.
+Currently **88 tools** have completion support.
 
 See [docs/tools.md](docs/tools.md) for the full list with shell support details.
 
@@ -66,7 +66,7 @@ These tools are in mise's registry but not yet supported. They may have completi
 | [aws-vault](https://github.com/ByteNess/aws-vault) | A vault for securely storing and accessing AWS ... | Needs testing |
 | awscli-local | This package provides the awslocal command, whi... | Needs testing |
 
-*...and 793 more tools in mise registry*
+*...and 792 more tools in mise registry*
 
 ## Tools Without Completion Support
 

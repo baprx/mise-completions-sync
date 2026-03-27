@@ -15,13 +15,14 @@ The following tools have shell completion support in mise-completions-sync.
 | [dagger](https://github.com/dagger/dagger) | A portable devkit for CI/CD pipelines | ✓ | ✓ | ✓ |
 | [delta](https://github.com/dandavison/delta) | A syntax-highlighting pager for git, diff, and ... | ✓ | ✓ | ✓ |
 | deno | A modern runtime for JavaScript and TypeScript ... | ✓ | ✓ | ✓ |
+| [dive](https://github.com/wagoodman/dive) | A tool for exploring each layer in a docker image | ✓ | ✓ | ✓ |
 | docker |  | ✓ | ✓ | ✓ |
+| dockerfmt |  | ✓ | ✓ | ✓ |
 | [doctl](https://github.com/digitalocean/doctl) | The official command line interface for the Dig... | ✓ | ✓ | ✓ |
 | [fd](https://github.com/sharkdp/fd) | A simple, fast and user-friendly alternative to... | ✓ | ✓ | ✓ |
 | flux |  | ✓ | ✓ | ✓ |
 | [flyctl](https://github.com/superfly/flyctl) | Command line tools for fly.io services | ✓ | ✓ | ✓ |
 | [fzf](https://github.com/junegunn/fzf) | :cherry_blossom: A command-line fuzzy finder | ✓ | ✓ | ✓ |
-| gcloud | GCloud CLI (Google Cloud SDK) | ✓ | ✓ |  |
 | [gh](https://github.com/cli/cli) | GitHub’s official command line tool | ✓ | ✓ | ✓ |
 | [gitu](https://github.com/altsem/gitu) | A TUI Git client inspired by Magit | ✓ | ✓ | ✓ |
 | [gitui](https://github.com/extrawurst/gitui) | Blazing 💥 fast terminal-ui for git written in rust | ✓ | ✓ | ✓ |
@@ -40,6 +41,7 @@ The following tools have shell completion support in mise-completions-sync.
 | [ko](https://github.com/ko-build/ko) | Build and deploy Go applications on Kubernetes | ✓ | ✓ | ✓ |
 | [krew](https://github.com/kubernetes-sigs/krew) | Find and install kubectl plugins | ✓ | ✓ | ✓ |
 | [kubectl](https://github.com/kubernetes/kubernetes) | kubectl cli | ✓ | ✓ | ✓ |
+| kubectl-ai |  | ✓ | ✓ | ✓ |
 | [kubectx](https://github.com/ahmetb/kubectx) | Faster way to switch between clusters and names... | ✓ | ✓ |  |
 | [kubeseal](https://github.com/bitnami-labs/sealed-secrets) | A Kubernetes controller and tool for one-way en... | ✓ | ✓ | ✓ |
 | [kustomize](https://github.com/kubernetes-sigs/kustomize) | Customization of kubernetes YAML configurations | ✓ | ✓ | ✓ |
@@ -55,11 +57,13 @@ The following tools have shell completion support in mise-completions-sync.
 | npm | the package manager for JavaScript | ✓ | ✓ |  |
 | oc | OpenShift Client CLI (oc) | ✓ | ✓ | ✓ |
 | oci | Oracle Cloud Infrastructure CLI | ✓ | ✓ | ✓ |
+| [oras](https://github.com/oras-project/oras) | ORAS CLI | ✓ | ✓ | ✓ |
 | [pipx](https://github.com/pypa/pipx) |  | ✓ | ✓ |  |
 | [pnpm](https://github.com/pnpm/pnpm) | Fast, disk space efficient package manager | ✓ | ✓ |  |
 | podman | Podman: A tool for managing OCI containers and ... | ✓ | ✓ | ✓ |
 | poetry | Python packaging and dependency management made... | ✓ | ✓ | ✓ |
 | [pulumi](https://github.com/pulumi/pulumi) | Pulumi - Infrastructure as Code in any programm... | ✓ | ✓ | ✓ |
+| [regctl](https://github.com/regclient/regclient) | Docker and OCI Registry Client in Go and toolin... | ✓ | ✓ | ✓ |
 | [restic](https://github.com/restic/restic) | Fast, secure, efficient backup program | ✓ | ✓ | ✓ |
 | [rg](https://github.com/BurntSushi/ripgrep) | ripgrep recursively searches directories for a ... | ✓ | ✓ | ✓ |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | ripgrep recursively searches directories for a ... | ✓ | ✓ | ✓ |
@@ -77,12 +81,12 @@ The following tools have shell completion support in mise-completions-sync.
 | [ty](https://github.com/astral-sh/ty) | An extremely fast Python type checker and langu... | ✓ | ✓ | ✓ |
 | [uv](https://github.com/astral-sh/uv) | An extremely fast Python package installer and ... | ✓ | ✓ | ✓ |
 | [velero](https://github.com/vmware-tanzu/velero) | Backup and migrate Kubernetes applications and ... | ✓ | ✓ | ✓ |
-| vercel |  | ✓ | ✓ |  |
+| vercel | Build and deploy on the Vercel cloud | ✓ | ✓ |  |
 | [xh](https://github.com/ducaale/xh) | Friendly and fast tool for sending HTTP requests | ✓ | ✓ | ✓ |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included | ✓ | ✓ | ✓ |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter cd command. Supports all major shells | ✓ | ✓ | ✓ |
 
-**Total: 77 tools**
+**Total: 81 tools**
 
 ## Shell Support Legend
 

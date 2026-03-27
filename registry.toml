@@ -119,6 +119,7 @@ fd = { zsh = "fd --gen-completions zsh", bash = "fd --gen-completions bash", fis
 delta = { zsh = "delta --generate-completion zsh", bash = "delta --generate-completion bash", fish = "delta --generate-completion fish" }
 watchexec = { zsh = "watchexec --completions zsh", bash = "watchexec --completions bash", fish = "watchexec --completions fish" }
 zellij = { zsh = "zellij setup --generate-completion zsh", bash = "zellij setup --generate-completion bash", fish = "zellij setup --generate-completion fish" }
+scw = { zsh = "scw autocomplete script shell=zsh", bash = "scw autocomplete script shell=bash", fish = "scw autocomplete script shell=fish" }
 
 # rg has unique --generate complete-{shell} pattern
 rg = { zsh = "rg --generate complete-zsh", bash = "rg --generate complete-bash", fish = "rg --generate complete-fish" }

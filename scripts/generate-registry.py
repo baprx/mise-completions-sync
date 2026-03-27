@@ -10,16 +10,16 @@ Discovers new tools in mise's registry that might support completions.
 
 Usage: uv run scripts/generate-registry.py
 
-Compares mise's registry against our registry.toml and suggests new tools
-to add based on known completion patterns.
+Fetches tools from https://mise-versions.jdx.dev/api/tools and compares
+against our registry.toml to suggest new tools to add.
 """
 
+import json
 import tomllib
 import httpx
-import sys
 from pathlib import Path
 
-MISE_REGISTRY_URL = "https://raw.githubusercontent.com/jdx/mise/main/registry.toml"
+MISE_API_URL = "https://mise-versions.jdx.dev/api/tools"
 
 # Map tool names to their likely completion pattern
 # Add tools here as you discover their completion patterns
@@ -118,14 +118,37 @@ TOOL_PATTERNS = {
 }
 
 
-def fetch_mise_registry() -> dict:
-    """Fetch and parse mise's registry.toml."""
-    response = httpx.get(MISE_REGISTRY_URL)
-    response.raise_for_status()
-    registry = tomllib.loads(response.text)
-    if "tools" in registry:
-        return registry["tools"]
-    return registry
+def fetch_mise_api() -> list[dict]:
+    """Fetch all tools from mise versions API (handles pagination)."""
+    all_tools = []
+    page = 1
+    limit = 100  # Max per page
+
+    while True:
+        url = f"{MISE_API_URL}?page={page}&limit={limit}"
+        response = httpx.get(url)
+        response.raise_for_status()
+        data = response.json()
+
+        tools = data.get("tools", [])
+        all_tools.extend(tools)
+
+        total_pages = data.get("total_pages", 1)
+        if page >= total_pages:
+            break
+        page += 1
+
+    return all_tools
+
+
+def extract_tool_name(tool_entry: dict) -> str:
+    """
+    Extract the canonical tool name from a mise API entry.
+
+    The API returns entries with a 'name' field that's the canonical name.
+    For example: "kubectl", "golangci-lint", "ripgrep"
+    """
+    return tool_entry.get("name", "")
 
 
 def load_our_registry() -> set[str]:
@@ -137,11 +160,15 @@ def load_our_registry() -> set[str]:
 
 
 def main():
-    mise_registry = fetch_mise_registry()
+    tools_data = fetch_mise_api()
     our_tools = load_our_registry()
 
+    # Extract tool names from API response
+    mise_tools = {
+        extract_tool_name(tool) for tool in tools_data if extract_tool_name(tool)
+    }
+
     # Find tools in mise that we don't have
-    mise_tools = set(mise_registry.keys())
     missing = mise_tools - our_tools
 
     # Find missing tools that have known patterns
@@ -151,7 +178,7 @@ def main():
             suggestions.append((tool, TOOL_PATTERNS[tool]))
 
     # Report
-    print(f"Tools in mise registry: {len(mise_tools)}")
+    print(f"Tools in mise API: {len(mise_tools)}")
     print(f"Tools in our registry: {len(our_tools)}")
     print(f"Missing from our registry: {len(missing)}")
     print()
@@ -162,17 +189,20 @@ def main():
         for tool, pattern in suggestions:
             print(f'{tool} = "{pattern}"')
         print()
-        print(f"Add these lines to the [tools] section in registry.toml")
+        print("Add these lines to the [tools] section in registry.toml")
     else:
         print("No new tools with known patterns found.")
 
-    # List unknown tools for reference
+    # List unknown tools for reference (limit to first 20)
     unknown = missing - set(TOOL_PATTERNS.keys())
-    if unknown and len(unknown) <= 20:
+    if unknown:
         print()
+        unknown_list = sorted(unknown)[:20]
         print("Tools without known patterns (may need explicit entries):")
-        for tool in sorted(unknown):
+        for tool in unknown_list:
             print(f"  - {tool}")
+        if len(unknown) > 20:
+            print(f"  ... and {len(unknown) - 20} more")
 
 
 if __name__ == "__main__":

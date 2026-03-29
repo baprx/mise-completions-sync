@@ -62,10 +62,12 @@ oci = "standard"
 cosign = "standard"
 dive = "standard"
 dockerfmt = "standard"
+grype = "standard"
 nerdctl = "standard"
 oras = "standard"
 podman = "standard"
 regctl = "standard"
+syft = "standard"
 trivy = "standard"
 
 # Dev tools

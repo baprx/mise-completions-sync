@@ -5,7 +5,7 @@ Use this to identify tools that could be added to mise-completions-sync.
 
 ## Supported Tools
 
-Currently **88 tools** have completion support.
+Currently **92 tools** have completion support.
 
 See [docs/tools.md](docs/tools.md) for the full list with shell support details.
 
@@ -66,7 +66,7 @@ These tools are in mise's registry but not yet supported. They may have completi
 | [aws-vault](https://github.com/ByteNess/aws-vault) | A vault for securely storing and accessing AWS ... | Needs testing |
 | awscli-local | This package provides the awslocal command, whi... | Needs testing |
 
-*...and 790 more tools in mise registry*
+*...and 788 more tools in mise registry*
 
 ## Tools Without Completion Support
 
@@ -91,7 +91,6 @@ These tools have been tested and confirmed to NOT output shell completion script
 ## How to Add a Tool
 
 1. Check if the tool supports shell completions:
-
    ```bash
    mise x <tool> -- <tool> completion --help
    mise x <tool> -- <tool> --help | grep -i complet
@@ -100,7 +99,6 @@ These tools have been tested and confirmed to NOT output shell completion script
 2. Find the correct completion command pattern
 
 3. Add entry to `registry.toml`:
-
    ```toml
    # If it matches an existing pattern:
    newtool = "standard"  # for: newtool completion <shell>
@@ -110,7 +108,6 @@ These tools have been tested and confirmed to NOT output shell completion script
    ```
 
 4. Test the entry:
-
    ```bash
    uv run scripts/validate-registry.py --installed-only
    ```

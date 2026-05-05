@@ -230,17 +230,20 @@ mod tests {
     fn test_registry_with_env_vars() {
         let registry = load_registry().expect("Failed to load registry");
 
-        // Check that prek has env vars
-        if let Some(prek_completions) = registry.tools.get("prek") {
+        // Check that cookiecutter has env vars
+        if let Some(cookiecutter_completions) = registry.tools.get("cookiecutter") {
             // Test shell-specific env vars
             assert!(
-                prek_completions.fish_env.is_some(),
-                "prek should have fish env vars"
+                cookiecutter_completions.fish_env.is_some(),
+                "cookiecutter should have fish env vars"
             );
-            let fish_env = prek_completions.fish_env.as_ref().unwrap();
-            assert_eq!(fish_env.get("COMPLETE"), Some(&"fish".to_string()));
+            let fish_env = cookiecutter_completions.fish_env.as_ref().unwrap();
+            assert_eq!(
+                fish_env.get("_COOKIECUTTER_COMPLETE"),
+                Some(&"fish_source".to_string())
+            );
         } else {
-            panic!("prek not found in registry");
+            panic!("cookiecutter not found in registry");
         }
     }
 
@@ -272,9 +275,9 @@ mod tests {
         // Test that different shells can have different env vars
         let registry = load_registry().expect("Failed to load registry");
 
-        if let Some(prek_completions) = registry.tools.get("prek") {
+        if let Some(cookiecutter_completions) = registry.tools.get("cookiecutter") {
             // Fish should have COMPLETE=fish
-            assert!(prek_completions.fish_env.is_some());
+            assert!(cookiecutter_completions.fish_env.is_some());
             // Zsh and bash might have different or no env vars
         }
     }

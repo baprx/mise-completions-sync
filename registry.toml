@@ -116,6 +116,12 @@ pipx = { zsh = "register-python-argcomplete pipx", bash = "register-python-argco
 
 prek = { zsh = "prek util generate-shell-completion zsh", bash = "prek util generate-shell-completion bash", fish = "prek util generate-shell-completion fish" }
 
+# Click (https://click.palletsprojects.com) based CLIs need an exported environment variable
+[tools.cookiecutter]
+zsh = { command = "cookiecutter", env = { _COOKIECUTTER_COMPLETE = "zsh_source" } }
+bash = { command = "cookiecutter", env = { _COOKIECUTTER_COMPLETE = "bash_source" } }
+fish = { command = "cookiecutter", env = { _COOKIECUTTER_COMPLETE = "fish_source" } }
+
 # Unique command patterns
 just = { zsh = "just --completions zsh", bash = "just --completions bash", fish = "just --completions fish" }
 task = { zsh = "task --completion zsh", bash = "task --completion bash", fish = "task --completion fish" }
@@ -138,9 +144,3 @@ fzf = { zsh = "fzf --zsh", bash = "fzf --bash", fish = "fzf --fish" }
 
 # nix needs extra experimental features flag
 nix = { zsh = "nix --extra-experimental-features 'nix-command' completion zsh 2>/dev/null || true", bash = "nix --extra-experimental-features 'nix-command' completion bash 2>/dev/null || true", fish = "nix --extra-experimental-features 'nix-command' completion fish 2>/dev/null || true" }
-
-# Tools requiring environment variables (shell-specific)
-[tools.prek]
-zsh = { command = "prek --completions zsh", env = { COMPLETE = "zsh" } }
-bash = { command = "prek --completions bash", env = { COMPLETE = "bash" } }
-fish = { command = "prek --completions fish", env = { COMPLETE = "fish" } }

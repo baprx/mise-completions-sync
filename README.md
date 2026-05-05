@@ -81,6 +81,13 @@ postinstall = "mise-completions-sync"
 EOF
 ```
 
+If you want to only generate completions for newly installed or updated tools, you can add the flag `--new-only`:
+
+```toml
+[hooks]
+postinstall = "mise-completions-sync --new-only"
+```
+
 ## Updating
 
 ```bash

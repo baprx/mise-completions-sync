@@ -22,6 +22,10 @@ struct Cli {
     /// Specific tool(s) to sync (default: all installed)
     #[arg(value_name = "TOOL")]
     tools: Vec<String>,
+
+    /// Only sync completions for newly installed/updated tools (reads MISE_INSTALLED_TOOLS env var)
+    #[arg(long)]
+    new_only: bool,
 }
 
 #[derive(Subcommand)]
@@ -67,7 +71,7 @@ fn run() -> Result<(), sync::Error> {
             let shells = cli
                 .shell
                 .unwrap_or_else(|| vec!["zsh".to_string(), "bash".to_string(), "fish".to_string()]);
-            sync::sync_completions(&shells, &cli.tools)
+            sync::sync_completions(&shells, &cli.tools, cli.new_only)
         }
     }
 }

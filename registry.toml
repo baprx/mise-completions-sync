@@ -29,6 +29,7 @@ glab = "gh_style"
 # Kubernetes ecosystem
 clusterctl = "standard"
 cmctl = "standard"
+hubble = "standard"
 k9s = "standard"
 kind = "standard"
 kubectl-ai = "standard"
@@ -201,4 +202,3 @@ pkl = { zsh = "pkl shell-completion zsh", bash = "pkl shell-completion bash", fi
 
 # television provides the `tv` binary and requires init <shell>
 television = { zsh = "tv init zsh", bash = "tv init bash", fish = "tv init fish" }
-

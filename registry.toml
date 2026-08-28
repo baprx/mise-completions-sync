@@ -40,6 +40,7 @@ k3d = "standard"
 ko = "standard"
 kubeseal = { audit_skip = "needs a reachable cluster config even to print completions", zsh = "kubeseal completion zsh", bash = "kubeseal completion bash", fish = "kubeseal completion fish" }
 linkerd = "standard"
+nova = "standard"
 skaffold = "standard"
 stern = "standard"
 talosctl = "standard"
@@ -201,4 +202,3 @@ pkl = { zsh = "pkl shell-completion zsh", bash = "pkl shell-completion bash", fi
 
 # television provides the `tv` binary and requires init <shell>
 television = { zsh = "tv init zsh", bash = "tv init bash", fish = "tv init fish" }
-
